@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_13",
+      "description": "Field personBirthDate must be in the past!"
+    }
+  ]
+}

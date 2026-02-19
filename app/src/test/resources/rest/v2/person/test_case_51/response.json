@@ -1,0 +1,20 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_23",
+      "description": "Person field [personFirstName] validation error: size must be between 0 and 200!"
+    },
+    {
+      "errorCode": "ERROR_CODE_23",
+      "description": "Person field [personLastName] validation error: size must be between 0 and 200!"
+    },
+    {
+      "errorCode": "ERROR_CODE_23",
+      "description": "Person field [personFirstName] validation error: size must be between 0 and 200!"
+    },
+    {
+      "errorCode": "ERROR_CODE_23",
+      "description": "Person field [personLastName] validation error: size must be between 0 and 200!"
+    }
+  ]
+}

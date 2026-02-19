@@ -1,0 +1,122 @@
+plugins {
+    id 'org.springframework.boot' version "3.4.5"
+    id 'maven-publish'
+    id 'com.palantir.docker' version '0.35.0'
+    id 'checkstyle'
+}
+
+checkstyle {
+    configFile = 'config/checkstyle/checkstyle.xml' as File
+}
+
+ext {
+    set("springBootVersion", "3.4.5")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // === SPRING ===
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
+    implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion")
+    implementation("org.springframework.boot:spring-boot-starter-validation:$springBootVersion")
+
+    // === MESSAGE BROKER RabbitMQ ===
+    implementation("org.springframework.boot:spring-boot-starter-amqp:$springBootVersion")
+
+    // === OPENAPI / DOCS ===
+    implementation('org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0')
+
+    // === DATABASES ===
+    implementation('mysql:mysql-connector-java:8.0.33')
+    implementation('org.hibernate:hibernate-core:6.5.0.Final')
+    implementation ('org.liquibase:liquibase-core:4.27.0')
+    implementation('com.h2database:h2:2.2.224')
+
+    // === UTILITIES ===
+    implementation('com.fasterxml.jackson.core:jackson-core:2.15.0')
+    implementation ('com.google.guava:guava:33.0.0-jre')
+
+    // === JAXB (для экспорта XML) ===
+    implementation ('jakarta.xml.bind:jakarta.xml.bind-api:4.0.2')
+    implementation ('org.glassfish.jaxb:jaxb-runtime:4.0.5')
+
+    // === LOMBOK ===
+    compileOnly('org.projectlombok:lombok:1.18.32')
+    annotationProcessor('org.projectlombok:lombok:1.18.32')
+    testCompileOnly('org.projectlombok:lombok:1.18.32')
+    testAnnotationProcessor('org.projectlombok:lombok:1.18.32')
+
+    // === TESTING ===
+    testImplementation ("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+    testImplementation ('org.mockito:mockito-core:4.8.1')
+    testImplementation ('net.javacrumbs.json-unit:json-unit-assertj:2.37.0')
+    testImplementation ('uk.org.webcompere:model-assert:1.0.0')
+    testImplementation ('org.junit.jupiter:junit-jupiter-params:5.10.0')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    enabled = false
+}
+
+bootJar {
+    enabled = true
+    archiveBaseName = 'insurance-calculator'
+    archiveVersion = '1.0.0'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            // Identify the artifact
+            artifact bootJar  // This refers to the Spring Boot's bootJar task
+
+            // Project coordinates
+            groupId = 'org.javaguru'
+            artifactId = 'insurance-calculator'
+            version = '1.0.0'
+
+            // Add other metadata as needed
+            pom {
+                name = 'Insurance Calculator Application'
+                description = 'Application to calculate travel insurance premium'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+            }
+        }
+    }
+
+    // Configure the repository location (local Maven repository)
+    repositories {
+        mavenLocal()
+    }
+}
+
+tasks.named('clean') {
+    doLast {
+        delete("$rootDir/logs")
+    }
+}
+
+tasks.named('dockerPrepare') {
+    dependsOn tasks.named('bootJar')
+}
+
+docker {
+    dependsOn bootJar
+    name "insurance-calculator:1.0.0"
+    files 'build/libs/insurance-calculator-1.0.0.jar'
+    files 'wait-for-it.sh'
+    buildArgs(['JAR_FILE': "insurance-calculator-1.0.0.jar"])
+}

@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_20",
+      "description": "Personal code [123456-123] does not match the pattern XXXXXX-XXXXX!"
+    }
+  ]
+}

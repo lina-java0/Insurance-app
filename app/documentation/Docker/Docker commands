@@ -1,0 +1,61 @@
+1. Работа с контейнерами
+
+| Команда                            | Что делает                                                            |
+| ---------------------------------- | --------------------------------------------------------------------- |
+| `docker ps`                        | Показывает список запущенных контейнеров                              |
+| `docker ps -a`                     | Показывает все контейнеры, включая остановленные                      |
+| `docker start <container_name>`    | Запускает остановленный контейнер                                     |
+| `docker start -i <container_name>` | Запускает контейнер **с выводом логов прямо в консоль**               |
+| `docker stop <container_name>`     | Останавливает контейнер                                               |
+| `docker kill <container_name>`     | Принудительно останавливает контейнер                                 |
+| `docker restart <container_name>`  | Перезапускает контейнер                                               |
+| `docker logs <container_name>`     | Показывает логи контейнера                                            |
+| `docker logs -f <container_name>`  | Показывает логи в режиме **"follow"**, как `tail -f`                  |
+| `container create --name <container_name> <image_name>`  | Создает контейнер по образу`                    |
+
+2. Работа с образами
+
+| Команда                                | Что делает                  |
+| -------------------------------------- | --------------------------- |
+| `docker images`                        | Список локальных образов    |
+| `docker rmi <image_name>`              | Удалить образ               |
+| `docker pull <image_name>`             | Скачать образ из Docker Hub |
+| `docker build -t <image_name>:<tag> .` | Собрать образ из Dockerfile |
+
+3. Работа с контейнерами (дополнительно)
+
+| Команда                                      | Что делает                                  |
+| -------------------------------------------- | ------------------------------------------- |
+| `docker exec -it <container_name> /bin/bash` | Зайти внутрь контейнера интерактивно        |
+| `docker attach <container_name>`             | Присоединиться к уже запущенному контейнеру |
+| `docker rm <container_name>`                 | Удалить контейнер                           |
+| `docker container prune`                     | Удалить все остановленные контейнеры        |
+
+4. Сетевое взаимодействие
+
+| Команда                                      | Что делает                            |
+| -------------------------------------------- | ------------------------------------- |
+| `docker network ls`                          | Список сетей Docker                   |
+| `docker network inspect <network_name>`      | Посмотреть детали сети                |
+| `docker run -p <host_port>:<container_port>` | Проброс портов при запуске контейнера |
+
+5. Полезные комбинации
+
+1) Запустить контейнер и сразу войти внутрь:
+docker run -it --name my-container my-image /bin/bash
+
+2) Выводить логи в реальном времени:
+docker logs -f insurance-calculator
+
+3) Очистка остановленных контейнеров и ненужных образов:
+docker container prune
+docker image prune
+
+4) При старте контейнера указан пароль администратора,
+   выполнена прокидка портов так, чтобы порт 3000 вашей OS мапился на порт 3306 MySQL контейнера,
+   название контейнера mysql-container.
+
+   При старте MySQL контейнера в нем создается пустая база данных под названием insurance-calc-db.
+
+   Команда:
+   docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=javaguru -e MYSQL_DATABASE=insurance-calc-db -p 3000:3306 -d mysql:8.0

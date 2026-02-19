@@ -1,0 +1,24 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_7",
+      "description": "Field personFirstName must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_8",
+      "description": "Field personLastName must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_16",
+      "description": "Field personCode must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_12",
+      "description": "Field personBirthDate must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_14",
+      "description": "Field medicalRiskLimitLevel must not be empty!"
+    }
+  ]
+}

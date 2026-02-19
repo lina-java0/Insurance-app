@@ -1,0 +1,62 @@
+🐳 Docker + MySQL + Application — краткая шпаргалка
+🔹 1. Проверка / создание сети
+docker network ls
+docker network create javaguru-network
+
+🔹 2. Запуск MySQL в сети с пробросом порта
+docker rm -f mysql-container
+
+docker run -d \
+  --name mysql-container \
+  --network javaguru-network \
+  -p 3000:3306 \
+  -e MYSQL_ROOT_PASSWORD=javaguru \
+  -e MYSQL_DATABASE=insurance-calc-db \
+  mysql:8.0
+
+🔹 3. Сборка образа приложения
+docker build -t insurance-calculator .
+
+🔹 4. Запуск приложения в той же сети
+docker rm -f insurance-calculator
+
+docker run -d \
+  --name insurance-calculator \
+  --network javaguru-network \
+  -p 8080:8080 \
+  insurance-calculator
+
+🔹 5. Проверка логов приложения (Liquibase)
+docker logs -f insurance-calculator
+
+
+Ищем:
+
+Liquibase: Update has been successful
+
+🔹 6. Проверка базы через MySQL Workbench
+
+Connection settings:
+
+Hostname: 127.0.0.1
+
+Port: 3000
+
+Username: root
+
+Password: javaguru
+
+SQL:
+
+USE `insurance-calc-db`;
+SHOW TABLES;
+
+✅ Результат
+
+MySQL и приложение работают в одной сети
+
+Подключение по имени контейнера
+
+Liquibase создал все таблицы
+
+Проверка через Workbench успешна

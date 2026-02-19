@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_21",
+      "description": "Person first name [Fedor 1] allowed symbols contains latin chars, hyphen and spaces!"
+    }
+  ]
+}

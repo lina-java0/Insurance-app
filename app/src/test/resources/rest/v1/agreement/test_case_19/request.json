@@ -1,0 +1,11 @@
+{
+  "personFirstName" : "Fedor",
+  "personLastName" : "Vencak",
+  "personCode" : "123456-12345",
+  "personBirthDate" : "1998-08-16",
+  "agreementDateFrom" : "2026-04-27",
+  "agreementDateTo" : "2026-06-27",
+  "country" : "NOT_SUPPORTED",
+  "medicalRiskLimitLevel" : "LEVEL_10000",
+  "selected_risks": ["TRAVEL_MEDICAL", "TRAVEL_CANCELLATION", "TRAVEL_LOSS_BAGGAGE"]
+}

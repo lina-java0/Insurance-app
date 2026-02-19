@@ -1,0 +1,12 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_22",
+      "description": "Person last name [Vencak 1] allowed symbols contains latin chars, hyphen and spaces!"
+    },
+    {
+      "errorCode": "ERROR_CODE_22",
+      "description": "Person last name [Kono_shenko] allowed symbols contains latin chars, hyphen and spaces!"
+    }
+  ]
+}

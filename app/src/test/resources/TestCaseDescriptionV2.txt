@@ -1,0 +1,232 @@
+## Errors connected with people ##
+
+Test Case 1:
+Request: one person personFirstName is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_7.
+
+Test Case 2:
+Request: one person personFirstName is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_7.
+
+Test Case 3:
+Request: two people's personFirstName is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_7.
+
+Test Case 4:
+Request: two people's personFirstName is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_7.
+
+Test Case 5:
+Request: one person personFirstName format is not valid, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_21.
+
+Test Case 6:
+Request: two people's personFirstName format is not valid, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error codeOR_CODE_21.
+
+Test Case 7:
+Request: one person personLastName is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_8.
+
+Test Case 8:
+Request: one person personLastName is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_8.
+
+Test Case 9:
+Request: two people's personLastName is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_8.
+
+Test Case 10:
+Request: two people's personLastName is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_8.
+
+Test Case 11:
+Request: one person personLastName format is not valid, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_22.
+
+Test Case 12:
+Request: two people's personLastName format is not valid, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_22.
+
+Test Case 46:
+Request: one person personFirstName is too long, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_23.
+
+Test Case 47:
+Request: two people's personFirstName is too long, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_23.
+
+Test Case 48:
+Request: one person personLastName is too long, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_23.
+
+Test Case 49:
+Request: two people's personLastName is too long, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_23.
+
+Test Case 50:
+Request: one person personFirstName and personLastName are too long, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_23.
+
+Test Case 51:
+Request: two people's personFirstName and personLastName are too long, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple multiple error code = ERROR_CODE_23.
+
+Test Case 13:
+Request: one person personCode is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_16.
+
+Test Case 14:
+Request: one person personCode is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_16.
+
+Test Case 15:
+Request: two people's personCode is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_16.
+
+Test Case 16:
+Request: two people's personCode is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_16.
+
+Test Case 17:
+Request: one person personCode format is not valid, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_20.
+
+Test Case 18:
+Request: two people's personCode format is not valid, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_20.
+
+Test Case 19:
+Request: one person personBirthDate is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_12.
+
+Test Case 20:
+Request: two people's personBirthDate is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_12.
+
+Test Case 21:
+Request: one person personBirthDate is in the future, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_13.
+
+Test Case 22:
+Request: two people's personBirthDate is in the future, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_13.
+
+
+## Errors connected with agreement
+
+
+Test Case 23:
+Request: agreementDateFrom is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_2.
+
+Test Case 24:
+Request: agreementDateTo is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_4.
+
+Test Case 25:
+Request: agreementDateFrom is in the past, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_1.
+
+Test Case 26:
+Request: agreementDateTo is in the past, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_3.
+
+Test Case 27:
+Request: agreementDateTo is less than agreementDateFrom, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_5.
+
+Test Case 28:
+Request: country is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_10.
+
+Test Case 29:
+Request: country is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_10.
+
+Test Case 30:
+Request: country is not supported, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_11.
+
+Test Case 31:
+Request: country is null, RISK_TYPE - TRAVEL_EVACUATION.
+Response: error code = ERROR_CODE_10.
+
+Test Case 32:
+Request: country is empty, RISK_TYPE - TRAVEL_EVACUATION.
+Response: error code = ERROR_CODE_10.
+
+Test Case 33:
+Request: all fields not provided, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code.
+
+Test Case 34:
+Request: all fields not provided.
+Response: multiple error code.
+
+Test Case 46:
+Request: people list is empty.
+Response: multiple error code.
+
+
+## Errors connected with risk_travel_medical ##
+
+Test Case 35:
+Request: All fields filled, RISK_TYPE - TRAVEL_MEDICAL.
+Response: success, without errors.
+
+Test Case 36:
+Request: one person medicalRiskLimitLevel is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_14.
+
+Test Case 37:
+Request: one person medicalRiskLimitLevel value is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_14.
+
+Test Case 38:
+Request: two people's medicalRiskLimitLevel value is null, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_14.
+
+Test Case 39:
+Request: two people's medicalRiskLimitLevel value is empty, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_14.
+
+Test Case 40:
+Request: one person medicalRiskLimitLevel value is not supported, RISK_TYPE - TRAVEL_MEDICAL.
+Response: error code = ERROR_CODE_15.
+
+Test Case 41:
+Request: two people's medicalRiskLimitLevel value is not supported, RISK_TYPE - TRAVEL_MEDICAL.
+Response: multiple error code = ERROR_CODE_15.
+
+
+## Errors connected with selected_risks ##
+
+
+Test Case 42:
+Request: selectedRisks value is null.
+Response: error code = ERROR_CODE_6.
+
+Test Case 43:
+Request: selectedRisks value is empty.
+Response: error code = ERROR_CODE_6.
+
+Test Case 44:
+Request: selectedRisks value is not supported (one risk).
+Response: error code = ERROR_CODE_9.
+
+Test Case 45:
+Request: selectedRisks value is not supported (two risks).
+Response: multiple error code = ERROR_CODE_9.
+
+
+
+
+
+
+
+
+
+
+
+
