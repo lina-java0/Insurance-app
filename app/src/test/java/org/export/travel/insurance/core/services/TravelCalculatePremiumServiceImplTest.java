@@ -6,7 +6,7 @@ import org.export.travel.insurance.core.api.dto.AgreementDTO;
 import org.export.travel.insurance.core.api.dto.PersonDTO;
 import org.export.travel.insurance.core.api.dto.ValidationErrorDTO;
 import org.export.travel.insurance.core.domain.entities.AgreementEntity;
-import org.export.travel.insurance.core.messagebroker.ProposalGeneratorQueueSender;
+import org.export.travel.insurance.core.messagebroker.proposal.ProposalGeneratorQueueSender;
 import org.export.travel.insurance.core.validations.TravelAgreementValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package org.export.travel.insurance.core.messagebroker;
+package org.export.travel.insurance.core.messagebroker.proposal;
 
 import org.export.travel.insurance.core.api.dto.AgreementDTO;
 

@@ -1,0 +1,31 @@
+Test Case 1:
+Request: personFirstName is null.
+Response: error code = ERROR_CODE_1.
+
+Test Case 2:
+Request: personFirstName is empty.
+Response: error code = ERROR_CODE_1.
+
+Test Case 3:
+Request: personLastName is null.
+Response: error code = ERROR_CODE_2.
+
+Test Case 4:
+Request: personLastName is empty.
+Response: error code = ERROR_CODE_2.
+
+Test Case 5:
+Request: personCode is null.
+Response: error code = ERROR_CODE_3.
+
+Test Case 6:
+Request: personCode is empty.
+Response: error code = ERROR_CODE_3.
+
+Test Case 7:
+Request: person is blacklisted check.
+Response: successful check.
+
+Test Case 8:
+Request: person is not blacklisted check.
+Response: successful check.

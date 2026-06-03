@@ -7,7 +7,7 @@ import org.export.travel.insurance.core.api.command.TravelCalculatePremiumCoreRe
 import org.export.travel.insurance.core.api.dto.AgreementDTO;
 import org.export.travel.insurance.core.api.dto.ValidationErrorDTO;
 import org.export.travel.insurance.core.domain.entities.AgreementEntity;
-import org.export.travel.insurance.core.messagebroker.ProposalGeneratorQueueSender;
+import org.export.travel.insurance.core.messagebroker.proposal.ProposalGeneratorQueueSender;
 import org.export.travel.insurance.core.validations.TravelAgreementValidator;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

@@ -69,7 +69,7 @@ jar {
 bootJar {
     enabled = true
     archiveBaseName = 'insurance-calculator'
-    archiveVersion = '1.0.0'
+    archiveVersion = '1.0.2'
 }
 
 publishing {
@@ -81,7 +81,7 @@ publishing {
             // Project coordinates
             groupId = 'org.javaguru'
             artifactId = 'insurance-calculator'
-            version = '1.0.0'
+            version = '1.0.2'
 
             // Add other metadata as needed
             pom {
@@ -115,8 +115,8 @@ tasks.named('dockerPrepare') {
 
 docker {
     dependsOn bootJar
-    name "insurance-calculator:1.0.0"
-    files 'build/libs/insurance-calculator-1.0.0.jar'
+    name "insurance-calculator:1.0.2"
+    files 'build/libs/insurance-calculator-1.0.2.jar'
     files 'wait-for-it.sh'
-    buildArgs(['JAR_FILE': "insurance-calculator-1.0.0.jar"])
+    buildArgs(['JAR_FILE': "insurance-calculator-1.0.2.jar"])
 }

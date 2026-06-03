@@ -12,3 +12,5 @@ plugins {
 
 rootProject.name = 'Insurance-app'
 include('app')
+include('black-list-app')
+include('doc-generator-app')
